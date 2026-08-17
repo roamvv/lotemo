@@ -1,0 +1,33 @@
+{
+  "name": "lotemo.com",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build ./src/index.ts --outdir ./dist --target bun --sourcemap",
+    "start": "bun run dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.20.0",
+      "onFail": "download"
+    }
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.1",
+    "better-auth": "^1.6.29",
+    "hono": "^4.13.2",
+    "mysql2": "^3.23.3",
+    "reflect-metadata": "^0.2.2",
+    "tsx": "^4.23.12",
+    "typeorm": "^1.1.0",
+    "typeorm-naming-strategies": "^4.1.0",
+    "typescript": "^7.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0"
+  }
+}
