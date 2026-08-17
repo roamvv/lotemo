@@ -1,5 +1,5 @@
 
-import { server } from './hono'
+import { server } from '@/hono'
 
 const createApp = () => {
   const { fetch } = server

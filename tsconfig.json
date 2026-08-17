@@ -15,7 +15,15 @@
 		"experimentalDecorators": true,
 		"types": [
 			"@types/node"
-		]
+		],
+		"paths": {
+			".db/*": ["./db/*"],
+			".lib/*": ["./src/lib/*"],
+			".auth/*": ["./src/auth/*"],
+			".service/*": ["./src/service/*"],
+			".context/*": ["./src/context/*"],
+			"@/*": ["./src/*"],
+		}
 	},
 	"exclude": [
 		"node_modules"

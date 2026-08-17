@@ -1,3 +1,4 @@
+import 'dotenv/config'
 
 import { DataSource } from 'typeorm'
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies'
@@ -12,5 +13,7 @@ export const DefaultDataSource = new DataSource({
   ssl: process.env.TIDB_ENABLE_SSL === 'true',
   namingStrategy: new SnakeNamingStrategy(),
   synchronize: false,
-  logging: false, 
+  logging: false,
+  entities: ['./db/entities/*.ts'],
+  migrations: ['./db/migrations/*.ts'],
 })
