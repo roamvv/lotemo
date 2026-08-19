@@ -1,0 +1,15 @@
+info:
+  name: Unsave Property
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{serverUrl}}/api/v1/me/saved-properties/3391077"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

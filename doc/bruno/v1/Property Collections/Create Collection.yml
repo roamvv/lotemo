@@ -1,0 +1,22 @@
+info:
+  name: Create Collection
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/collections"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "BGC Ready-for-Occupancy",
+        "description": "Move-in ready condo units around Bonifacio Global City."
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

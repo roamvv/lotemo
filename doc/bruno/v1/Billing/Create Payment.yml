@@ -1,0 +1,25 @@
+info:
+  name: Create Payment
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/agencies/7841002/payments"
+  body:
+    type: json
+    data: |-
+      {
+        "currency": "PHP",
+        "amount": 2499.00,
+        "purpose": "CHARGE",
+        "provider": "PAYMONGO",
+        "paymentMethod": "gcash"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

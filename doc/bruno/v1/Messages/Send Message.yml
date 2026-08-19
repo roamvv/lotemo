@@ -1,0 +1,22 @@
+info:
+  name: Send Message
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/conversations/conv_28870/messages"
+  body:
+    type: json
+    data: |-
+      {
+        "receiverId": "usr_2p8xk4mq0001",
+        "content": "Hi Marco, yes it's still available. I have a slot this Saturday at 2PM, does that work?"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

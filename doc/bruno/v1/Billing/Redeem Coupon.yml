@@ -1,0 +1,22 @@
+info:
+  name: Redeem Coupon
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/billing/coupons/redeem"
+  body:
+    type: json
+    data: |-
+      {
+        "code": "LOTEMO2026",
+        "agencyId": 7841002
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

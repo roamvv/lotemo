@@ -1,0 +1,24 @@
+info:
+  name: Cancel Subscription
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{serverUrl}}/api/v1/agencies/7841002/subscription"
+  body:
+    type: json
+    data: |-
+      {
+        "reason": "Switching to the annual plan next renewal"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Cancels at the end of the current billing period rather than immediately (status moves to CANCEL, access remains until currentPeriodEndsAt).

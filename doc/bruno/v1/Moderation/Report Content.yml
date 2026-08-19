@@ -1,0 +1,27 @@
+info:
+  name: Report Content
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/moderation/reports"
+  body:
+    type: json
+    data: |-
+      {
+        "targetType": "PROPERTY",
+        "targetId": 3391077,
+        "reason": "MISLEADING_LISTING",
+        "notes": "Photos don't match the unit, price listed is different from what the agent quoted over chat."
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  targetType covers PROPERTY, AGENCY, REVIEW, MESSAGE, or USER. Available to any signed-in user.

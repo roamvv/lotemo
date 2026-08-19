@@ -1,0 +1,15 @@
+info:
+  name: Mark Message Read
+  type: http
+  seq: 3
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/messages/501823/read"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

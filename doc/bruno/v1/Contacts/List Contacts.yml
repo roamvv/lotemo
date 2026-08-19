@@ -1,0 +1,19 @@
+info:
+  name: List Contacts
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{serverUrl}}/api/v1/agencies/7841002/contacts"
+  params:
+    - name: "status"
+      value: "NEW"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

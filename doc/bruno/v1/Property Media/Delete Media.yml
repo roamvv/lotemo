@@ -1,0 +1,15 @@
+info:
+  name: Delete Media
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{serverUrl}}/api/v1/properties/3391077/media/910233"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

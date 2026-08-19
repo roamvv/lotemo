@@ -1,0 +1,21 @@
+info:
+  name: Update Service Area
+  type: http
+  seq: 3
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/agencies/7841002/service-areas/62410"
+  body:
+    type: json
+    data: |-
+      {
+        "radiusKm": 8
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

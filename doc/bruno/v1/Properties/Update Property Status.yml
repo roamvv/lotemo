@@ -1,0 +1,24 @@
+info:
+  name: Update Property Status
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/properties/3391077/status"
+  body:
+    type: json
+    data: |-
+      {
+        "propertyStatus": "AVAILABLE"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Valid transitions: DRAFT -> AVAILABLE -> RESERVED -> SOLD | RENTED.

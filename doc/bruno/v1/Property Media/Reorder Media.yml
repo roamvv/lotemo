@@ -1,0 +1,24 @@
+info:
+  name: Reorder Media
+  type: http
+  seq: 3
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/properties/3391077/media/reorder"
+  body:
+    type: json
+    data: |-
+      {
+        "order": [910233, 910231, 910235, 910232]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Array of media ids in the desired sort order; the server maps them back to the `sort` column.

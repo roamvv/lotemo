@@ -1,0 +1,26 @@
+info:
+  name: Boost Listing
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/properties/3391077/promotions"
+  body:
+    type: json
+    data: |-
+      {
+        "planId": 21,
+        "startsAt": "2026-08-20T00:00:00Z",
+        "endsAt": "2026-09-19T00:00:00Z"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  planId points to a biz_payment_plans row of type LISTING_BOOST; a biz_payments charge is created alongside this.

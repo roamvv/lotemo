@@ -1,0 +1,23 @@
+info:
+  name: Upload Verification Document
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/agencies/7841002/verifications/551201/documents"
+  body:
+    type: json
+    data: |-
+      {
+        "docType": "SEC_REGISTRATION",
+        "fileUrl": "https://cdn.lotemo.com/verifications/551201/sec-registration.pdf",
+        "fileName": "sec-registration.pdf"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

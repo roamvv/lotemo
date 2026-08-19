@@ -1,0 +1,26 @@
+info:
+  name: Create Contact
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/agencies/7841002/contacts"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Marco Villareal",
+        "email": "marco.villareal@gmail.com",
+        "phone": "+639175551234"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Usually created automatically from an Inquiry, but agents can also add contacts manually (walk-ins, referrals).

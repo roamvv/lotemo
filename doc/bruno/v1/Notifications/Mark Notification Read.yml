@@ -1,0 +1,15 @@
+info:
+  name: Mark Notification Read
+  type: http
+  seq: 2
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/me/notifications/88213/read"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

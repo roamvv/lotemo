@@ -1,0 +1,29 @@
+info:
+  name: Add Service Area
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/agencies/7841002/service-areas"
+  body:
+    type: json
+    data: |-
+      {
+        "areaName": "Bonifacio Global City",
+        "locationId": 154,
+        "country": "Philippines",
+        "state": "Metro Manila",
+        "city": "Taguig",
+        "barangay": "Fort Bonifacio",
+        "postalCode": "1634",
+        "address": "BGC, Taguig City",
+        "radiusKm": 5
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

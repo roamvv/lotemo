@@ -1,0 +1,7 @@
+info:
+  name: Property Prices
+  type: folder
+  seq: 11
+
+request:
+  auth: inherit

@@ -1,0 +1,21 @@
+info:
+  name: Assign Contact
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/contacts/60211/assign"
+  body:
+    type: json
+    data: |-
+      {
+        "assignedMemberId": 3310982
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

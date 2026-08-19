@@ -1,0 +1,24 @@
+info:
+  name: Log Activity
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/contacts/60211/activities"
+  body:
+    type: json
+    data: |-
+      {
+        "activityId": "act_7f0d3b1c",
+        "type": "SHOWING",
+        "occurredAt": "2026-08-18T06:30:00Z",
+        "notes": "Walked the client through the 22nd floor unit, positive feedback on the view."
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

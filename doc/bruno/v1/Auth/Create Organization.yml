@@ -1,0 +1,25 @@
+info:
+  name: Create Organization
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/auth/organization/create"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Meridian Realty PH",
+        "slug": "meridian-realty-ph"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Creates the iam_organizations row that an agency is later linked to (agencies.organizationId).

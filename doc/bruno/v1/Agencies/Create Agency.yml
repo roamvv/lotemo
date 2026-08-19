@@ -1,0 +1,26 @@
+info:
+  name: Create Agency
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/agencies"
+  body:
+    type: json
+    data: |-
+      {
+        "organizationId": "org_9f21ab7c",
+        "name": "Meridian Realty PH",
+        "slug": "meridian-realty-ph",
+        "bio": "Full-service brokerage covering Metro Manila, specializing in BGC and Makati CBD condos.",
+        "websiteUrl": "https://meridianrealty.ph",
+        "isDeveloper": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

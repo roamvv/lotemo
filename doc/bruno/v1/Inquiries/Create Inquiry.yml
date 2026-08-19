@@ -1,0 +1,27 @@
+info:
+  name: Create Inquiry
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/properties/3391077/inquiries"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Marco Villareal",
+        "email": "marco.villareal@gmail.com",
+        "phone": "+639175551234",
+        "message": "Hi, is this unit still available? I'd like to schedule a viewing this weekend."
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Public endpoint (no login required) triggered from the 'Contact Agent' form on a listing page.
+  Creates/updates a Contact and opens (or continues) a conversationId used by the Messages endpoints.

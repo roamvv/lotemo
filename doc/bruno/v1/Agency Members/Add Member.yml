@@ -1,0 +1,27 @@
+info:
+  name: Add Member
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/agencies/7841002/members"
+  body:
+    type: json
+    data: |-
+      {
+        "userId": "usr_2p8xk4mq0001",
+        "fullName": "Grace Tan",
+        "licenseId": "PRC-RESB-45213",
+        "role": "AGENT"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Adds a registered user as a licensed agent under the agency. licenseId is the PRC broker/salesperson license number.

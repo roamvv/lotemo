@@ -1,0 +1,27 @@
+info:
+  name: Update Price
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/properties/3391077/prices"
+  body:
+    type: json
+    data: |-
+      {
+        "currency": "PHP",
+        "isNegotiable": true,
+        "totalAmount": 8950000,
+        "pricingType": "TOTAL"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Creates a new PropertyPrice row and links it to the previous one via prevPriceId; does not overwrite history.

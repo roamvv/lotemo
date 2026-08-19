@@ -1,0 +1,7 @@
+info:
+  name: Agencies
+  type: folder
+  seq: 4
+
+request:
+  auth: inherit

@@ -1,0 +1,23 @@
+info:
+  name: Update Notification Preferences
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/me/notification-preferences"
+  body:
+    type: json
+    data: |-
+      {
+        "newInquiry": { "inApp": true, "email": true },
+        "savedSearchMatch": { "inApp": true, "email": false },
+        "priceDropOnSaved": { "inApp": true, "email": true }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

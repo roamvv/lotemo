@@ -1,0 +1,21 @@
+info:
+  name: Suspend Member
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/agencies/7841002/members/3310982/suspend"
+  body:
+    type: json
+    data: |-
+      {
+        "reason": "Pending license renewal verification"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

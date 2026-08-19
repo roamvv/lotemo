@@ -1,0 +1,22 @@
+info:
+  name: Approve Verification (Admin)
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/admin/verifications/551201/approve"
+  body:
+    type: json
+    data: |-
+      {
+        "verification": "FULL_VERIFY",
+        "notes": "SEC registration and PRC broker license confirmed against the registry."
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

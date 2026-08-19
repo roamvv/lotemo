@@ -1,0 +1,23 @@
+info:
+  name: Update Property
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/properties/3391077"
+  body:
+    type: json
+    data: |-
+      {
+        "title": "2BR Corner Unit with Balcony, BGC",
+        "description": "Bright corner unit on the 22nd floor with unobstructed skyline views, 1 parking slot, near High Street. Move-in ready.",
+        "bathroomCount": 2
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

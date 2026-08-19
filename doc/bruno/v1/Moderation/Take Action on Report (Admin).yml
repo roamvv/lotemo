@@ -1,0 +1,25 @@
+info:
+  name: Take Action on Report (Admin)
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/admin/moderation/reports/6620/action"
+  body:
+    type: json
+    data: |-
+      {
+        "action": "UNPUBLISH_LISTING",
+        "notes": "Listing price didn't match agent correspondence, sent back to the agency as DRAFT for correction."
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  action examples: DISMISS, WARN_USER, UNPUBLISH_LISTING, REMOVE_REVIEW, SUSPEND_AGENCY.

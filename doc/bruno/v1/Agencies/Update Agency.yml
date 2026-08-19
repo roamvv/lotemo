@@ -1,0 +1,25 @@
+info:
+  name: Update Agency
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/agencies/7841002"
+  body:
+    type: json
+    data: |-
+      {
+        "bio": "Full-service brokerage covering Metro Manila and Cebu, specializing in BGC and Makati CBD condos.",
+        "profileUrl": "https://cdn.lotemo.com/agencies/7841002/logo.png",
+        "socialLinks": [
+          { "memberId": 3310981, "social": "FACEBOOK", "url": "https://facebook.com/meridianrealtyph" }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,21 @@
+info:
+  name: Request Refund
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/payments/992104/refund"
+  body:
+    type: json
+    data: |-
+      {
+        "reason": "Boost was purchased for the wrong listing."
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

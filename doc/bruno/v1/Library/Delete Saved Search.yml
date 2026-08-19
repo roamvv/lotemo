@@ -1,0 +1,15 @@
+info:
+  name: Delete Saved Search
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{serverUrl}}/api/v1/me/saved-searches/9021"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

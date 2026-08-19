@@ -1,0 +1,32 @@
+info:
+  name: Create Saved Search
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/me/saved-searches"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "2BR condos in BGC under 12M",
+        "search": "city:Taguig propertyType:CONDO bedrooms:2",
+        "filters": {
+          "city": "Taguig",
+          "propertyType": "CONDO",
+          "bedrooms": 2,
+          "maxPrice": 12000000
+        },
+        "isExplicit": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  isExplicit true means the user pressed 'Save this search'; the notification job checks lastNotifiedAt to email new matches.

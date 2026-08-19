@@ -1,0 +1,21 @@
+info:
+  name: Flag Review
+  type: http
+  seq: 3
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/reviews/91422/flag"
+  body:
+    type: json
+    data: |-
+      {
+        "reason": "Reviewer claims to be a tenant, not a buyer who transacted with this agency."
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

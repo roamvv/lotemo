@@ -1,0 +1,40 @@
+info:
+  name: Create Property
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/properties"
+  body:
+    type: json
+    data: |-
+      {
+        "agencyId": 7841002,
+        "collectionId": 44012,
+        "title": "2BR Condo Unit with Balcony, BGC",
+        "description": "Bright corner unit on the 22nd floor with unobstructed skyline views, 1 parking slot, near High Street.",
+        "propertyType": "CONDO",
+        "locationId": 154,
+        "country": "Philippines",
+        "state": "Metro Manila",
+        "city": "Taguig",
+        "barangay": "Fort Bonifacio",
+        "postalCode": "1634",
+        "address": "26th St corner 4th Ave, Bonifacio Global City",
+        "bedroomCount": 2,
+        "bathroomCount": 2,
+        "parkingSpacesCount": 1,
+        "floorAreaSqm": 62.5,
+        "lotAreaSqm": null
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Creates the listing as propertyStatus: DRAFT. Publish it via the Update Property Status request once media and price are attached.

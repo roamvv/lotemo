@@ -1,0 +1,24 @@
+info:
+  name: Add Media
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/properties/3391077/media"
+  body:
+    type: json
+    data: |-
+      {
+        "url": "https://cdn.lotemo.com/properties/3391077/living-room.jpg",
+        "name": "Living room",
+        "altText": "Living room with floor-to-ceiling windows overlooking BGC skyline",
+        "mediaType": "photo"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

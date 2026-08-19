@@ -1,14 +1,14 @@
 opencollection: 1.0.0
 
 info:
-  name: Lotemo API
+  name: Lotemo API (v1)
 config:
   proxy:
     inherit: true
     config:
       protocol: http
       hostname: ""
-      port: ""
+      port: 0
       auth:
         username: ""
         password: ""
