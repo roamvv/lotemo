@@ -1,9 +1,10 @@
 import 'dotenv/config'
 
-import { DataSource } from 'typeorm'
+import { DataSource, DataSourceOptions } from 'typeorm'
+import { SeederOptions } from 'typeorm-extension'
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies'
 
-export default new DataSource({
+const opts: DataSourceOptions & SeederOptions = {
   type: 'postgres',
   url: process.env.DATABASE_URL ?? '',
   namingStrategy: new SnakeNamingStrategy(),
@@ -13,4 +14,9 @@ export default new DataSource({
   migrations: ['./db/migrations/*.ts'],
   migrationsTableName: '__migrations',
   migrationsTransactionMode: 'all',
-})
+  seeds: ['./db/seeds/**/*{.ts,.js}'],
+  factories: ['./db/factories/**/*{.ts,.js}'],
+  seedTracking: false,
+}
+
+export default new DataSource(opts)
