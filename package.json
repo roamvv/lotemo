@@ -28,6 +28,7 @@
     "reflect-metadata": "^0.2.2",
     "tsx": "^4.23.12",
     "typeorm": "^1.1.0",
+    "typeorm-extension": "^4.0.0",
     "typeorm-naming-strategies": "^4.1.0",
     "zod": "^4.4.3"
   },
