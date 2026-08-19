@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm'
 
 @Entity({
-  name: 'accounts',
+  name: 'iam_accounts',
 })
 export class Account {
   @PrimaryColumn({ type: 'text' })
@@ -16,9 +16,9 @@ export class Account {
   accessToken: string | null
   @Column({ type: 'text', nullable: true })
   refreshToken: string | null
-  @Column({ type: 'timestamp with local time zone', nullable: true })
+  @Column({ type: 'timestamptz', nullable: true })
   accessTokenExpiresAt: Date | null
-  @Column({ type: 'timestamp with local time zone', nullable: true })
+  @Column({ type: 'timestamptz', nullable: true })
   refreshTokenExpiresAt: Date | null
   @Column({ type: 'text', nullable: true })
   scope: string | null
@@ -26,8 +26,8 @@ export class Account {
   idToken: string | null
   @Column({ type: 'text', nullable: true })
   password: string | null
-  @CreateDateColumn({ type: 'timestamp with local time zone' })
+  @CreateDateColumn({ type: 'timestamptz' })
   createdAt: Date
-  @UpdateDateColumn({ type: 'timestamp with local time zone' })
+  @UpdateDateColumn({ type: 'timestamptz' })
   updatedAt: Date
 }

@@ -4,12 +4,7 @@ declare namespace NodeJS {
     PORT?: string
     BETTER_AUTH_URL: string
     BETTER_AUTH_SECRET: string
-    TIDB_HOST: string
-    TIDB_PORT: string
-    TIDB_USER: string
-    TIDB_PASSWORD: string
-    TIDB_DATABASE: string
-    TIDB_ENABLE_SSL: string
+    DATABASE_URL: string
     S3_REGION: string
     S3_ENDPOINT: string
     S3_ACCESS_KEY: string

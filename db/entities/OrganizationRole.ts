@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm'
 
 @Entity({
-  name: 'organization_roles',
+  name: 'iam_org_roles',
 })
 export class OrganizationRole {
   @PrimaryColumn({ type: 'text' })
@@ -12,8 +12,8 @@ export class OrganizationRole {
   role: string
   @Column()
   permission: string
-  @CreateDateColumn({ type: 'timestamp with local time zone' })
+  @CreateDateColumn({ type: 'timestamptz' })
   createdAt: Date
-  @UpdateDateColumn({ type: 'timestamp with local time zone', nullable: true })
+  @UpdateDateColumn({ type: 'timestamptz', nullable: true })
   updatedAt: Date
 }

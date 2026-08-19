@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  db:
+    image: docker.io/postgis/postgis:16-3.4-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: lotemodb_dev
+    ports:
+      - '5051:5432'
+    volumes:
+      - lotemo_pgdata:/var/lib/postgresql/data
+
+volumes:
+  lotemo_pgdata:

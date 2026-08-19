@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm'
 
 @Entity({
-  name: 'organizations',
+  name: 'iam_organizations',
 })
 export class Organization {
   @PrimaryColumn({ type: 'text' })
@@ -14,6 +14,6 @@ export class Organization {
   logo: string | null
   @Column({ type: 'text', nullable: true })
   metadata: string | null
-  @Column({ type: 'timestamp with local time zone' })
+  @Column({ type: 'timestamptz' })
   createdAt: Date
 }

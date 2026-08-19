@@ -17,9 +17,9 @@
 			"@types/node"
 		],
 		"paths": {
+			".zod/*": ["./src/zod/*"],
 			".db/*": ["./db/*"],
-			".lib/*": ["./src/lib/*"],
-			".auth/*": ["./src/auth/*"],
+			".lib/*": ["./src/lib/*"],	
 			".service/*": ["./src/service/*"],
 			".context/*": ["./src/context/*"],
 			"@/*": ["./src/*"],

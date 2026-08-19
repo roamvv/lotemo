@@ -1,8 +1,7 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn, UpdateDateColumn } from 'typeorm'
-import { User } from './User'
+import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm'
 
 @Entity({
-  name: 'sessions',
+  name: 'iam_sessions',
 })
 export class Session {
   @PrimaryColumn({ type: 'text' })
@@ -15,8 +14,10 @@ export class Session {
   activeOrganizationId: string | null
   @Column({ type: 'text', nullable: true })
   activeTeamId: string | null
-  @CreateDateColumn({ type: 'timestamp with local time zone' })
+  @Column({ type: 'text', nullable: true })
+  impersonatedBy: string | null
+  @CreateDateColumn({ type: 'timestamptz' })
   createdAt: Date
-  @UpdateDateColumn({ type: 'timestamp with local time zone' })
+  @UpdateDateColumn({ type: 'timestamptz' })
   updatedAt: Date   
 }

@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm'
 
 @Entity({
-  name: 'organization_invitations',
+  name: 'iam_org_invitations',
 })
 export class OrganizationInvitation {
   @PrimaryColumn({ type: 'text' })
@@ -16,6 +16,6 @@ export class OrganizationInvitation {
   status: 'pending' | 'accepted' | 'rejected' | 'cancelled'
   @Column({ type: 'text' })
   invitedBy: string
-  @Column({ type: 'timestamp with local time zone' })
+  @Column({ type: 'timestamptz' })
   createdAt: Date
 }

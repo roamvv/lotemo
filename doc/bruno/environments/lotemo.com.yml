@@ -1,0 +1,5 @@
+name: api.lotemo.com
+variables:
+  - name: serverUrl
+    value: https://api.lotemo.com
+    description: ""

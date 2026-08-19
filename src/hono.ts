@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
-import { auth } from '.auth/server'
+
+import appv1 from './v1'
 
 export const server = new Hono({ strict: true })
 
-// better-auth handlers
-server.on(['POST', 'GET'], '/api/v1/auth/*', c => auth.handler(c.req.raw))
+server.route('/', appv1)

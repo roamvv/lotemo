@@ -6,7 +6,7 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeor
 export class Message {
   @PrimaryGeneratedColumn({ type: 'bigint', unsigned: true })
   id: number
-  @Column({ type: 'text', unique: true })
+  @Column({ type: 'text' })
   conversationId: string
   @Column({ type: 'bigint', nullable: true })
   messageId: number | null
@@ -16,8 +16,8 @@ export class Message {
   receiverId: string
   @Column({ type: 'text' })
   content: string
-  @CreateDateColumn({ type: 'timestamp with local time zone' })
+  @CreateDateColumn({ type: 'timestamptz' })
   sentAt: Date
-  @Column({ type: 'timestamp with local time zone' })
-  readAt: Date
+  @Column({ type: 'timestamptz', nullable: true })
+  readAt: Date | null
 }

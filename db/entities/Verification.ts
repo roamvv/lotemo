@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm'
 
 @Entity({
-  name: 'verifications',
+  name: 'iam_verifications',
 })
 export class Verification {
   @PrimaryColumn({ type: 'text' })
@@ -10,10 +10,10 @@ export class Verification {
   identifier: string
   @Column()
   value: string
-  @Column({ type: 'timestamp with local time zone' })
+  @Column({ type: 'timestamptz' })
   expiresAt: Date
-  @CreateDateColumn({ type: 'timestamp with local time zone' })
+  @CreateDateColumn({ type: 'timestamptz' })
   createdAt: Date
-  @UpdateDateColumn({ type: 'timestamp with local time zone' })
+  @UpdateDateColumn({ type: 'timestamptz' })
   updatedAt: Date
 }

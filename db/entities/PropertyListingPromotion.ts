@@ -1,19 +1,19 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
 
 @Entity({
-  name: 'property_listing_promotions',
+  name: 'ag_prop_listing_promotions',
 })
 export class PropertyListingPromotion {
   @PrimaryGeneratedColumn({ type: 'bigint', unsigned: true })
   id: number
   @Column({ type: 'bigint', unsigned: true })
   propertyId: number
-  @Column({ type: 'timestamp with local time zone' })
+  @Column({ type: 'timestamptz' })
   startsAt: Date
-  @Column({ type: 'timestamp with local time zone' })
+  @Column({ type: 'timestamptz' })
   endsAt: Date
-  @CreateDateColumn({ type: 'timestamp with local time zone' })
+  @CreateDateColumn({ type: 'timestamptz' })
   createdAt: Date
-  @UpdateDateColumn({ type: 'timestamp with local time zone' })
+  @UpdateDateColumn({ type: 'timestamptz' })
   updatedAt: Date
 }
