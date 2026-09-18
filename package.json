@@ -2,8 +2,8 @@
 	"name": "lotemo.com",
 	"type": "module",
 	"scripts": {
-		"dev": "bun run --watch src/index.ts",
-		"build": "bun build ./src/index.ts --outdir ./dist --target bun --sourcemap",
+		"dev": "bun run --watch src/v1/app/index.ts",
+		"build": "bun build ./src/v1/app/index.ts --outdir ./dist --target bun --sourcemap",
 		"start": "bun run dist/index.js",
 		"lint": "biome check --write . && bunx tsc --noEmit"
 	},

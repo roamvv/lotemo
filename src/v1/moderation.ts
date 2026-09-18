@@ -1,5 +1,5 @@
-import { notImplemented } from ".lib/http";
-import { paginatedResponseSchema, paginationQuery } from ".lib/pagination";
+import { notImplemented } from "@/v1/lib/http";
+import { paginatedResponseSchema, paginationQuery } from "@/v1/lib/pagination";
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
 
 // TODO: wire handlers to db/entities/ModerationReport.ts, ModerationAction.ts and

@@ -1,5 +1,5 @@
-import { notFoundStub, notImplemented } from ".lib/http";
-import { paginatedResponseSchema, paginationQuery } from ".lib/pagination";
+import { notFoundStub, notImplemented } from "@/v1/lib/http";
+import { paginatedResponseSchema, paginationQuery } from "@/v1/lib/pagination";
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
 
 // TODO: wire handlers to db/entities/Agency.ts via a repository layer

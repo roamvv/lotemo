@@ -18,9 +18,9 @@
 		"paths": {
 			".zod/*": ["./src/zod/*"],
 			".db/*": ["./db/*"],
-			".lib/*": ["./src/lib/*"],
-			".service/*": ["./src/service/*"],
-			".context/*": ["./src/context/*"],
+			".lib/*": ["./src/v1/lib/*"],
+			".service/*": ["./src/v1/service/*"],
+			".context/*": ["./src/v1/context/*"],
 			"@/*": ["./src/*"]
 		}
 	},

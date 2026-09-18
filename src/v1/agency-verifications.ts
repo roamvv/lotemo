@@ -1,4 +1,4 @@
-import { notImplemented } from ".lib/http";
+import { notImplemented } from "@/v1/lib/http";
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
 
 // TODO: wire handlers to db/entities/AgencyVerification.ts via a repository layer

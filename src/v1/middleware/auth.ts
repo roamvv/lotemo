@@ -1,6 +1,6 @@
 import { createMiddleware } from "hono/factory";
 
-import { auth } from "@/auth";
+import { auth } from "@/v1/app/auth";
 
 type Session = Awaited<ReturnType<typeof auth.api.getSession>>;
 

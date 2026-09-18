@@ -1,4 +1,4 @@
-import { noContentStub, notImplemented } from ".lib/http";
+import { noContentStub, notImplemented } from "@/v1/lib/http";
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
 
 // TODO: wire handlers to db/entities/UserSavedSearch.ts and UserSavedProperty.ts via a repository layer

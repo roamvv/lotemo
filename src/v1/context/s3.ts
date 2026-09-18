@@ -1,6 +1,6 @@
 import { createMiddleware } from "hono/factory";
 
-import s3 from "@/s3";
+import s3 from "@/v1/app/s3";
 
 /**
  * Attaches the shared S3-compatible client to `c.var.s3` for every request.

@@ -16,7 +16,7 @@ declare namespace TotemoV1 {
 	type HonoEnv = {
 		Variables: {
 			pgdb: typeof import(".db/pg").default;
-			s3: typeof import("@/s3").default;
+			s3: typeof import("@/v1/app/s3").default;
 		};
 	};
 }
