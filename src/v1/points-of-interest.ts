@@ -19,7 +19,7 @@ app.openapi(
 			200: {
 				content: {
 					"application/json": {
-						schema: z.record(z.string(), z.array(z.any())),
+						schema: z.any(),
 					},
 				},
 				description:
@@ -75,6 +75,10 @@ app.openapi(
 			201: {
 				content: { "application/json": { schema: z.any() } },
 				description: "Upserted POI, keyed by sourceProvider + sourceId",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),

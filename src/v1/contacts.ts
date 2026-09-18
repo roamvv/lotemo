@@ -44,6 +44,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Created contact",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),
@@ -83,6 +87,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Updated contact",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),
@@ -100,6 +108,10 @@ app.openapi(
 			200: {
 				content: { "application/json": { schema: z.any() } },
 				description: "Reassigned contact to another agency member",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),
@@ -119,6 +131,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description:
 					"Logged a CRM activity (call, note, viewing…) against a contact",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),

@@ -48,6 +48,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Created agency or agent review",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),
@@ -65,6 +69,10 @@ app.openapi(
 			200: {
 				content: { "application/json": { schema: z.any() } },
 				description: "Flagged review for moderation",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),

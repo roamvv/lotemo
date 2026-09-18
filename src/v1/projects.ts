@@ -83,6 +83,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Created project",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => c.json({ message: "Not implemented" }, 501),
@@ -100,6 +104,10 @@ app.openapi(
 			200: {
 				content: { "application/json": { schema: z.any() } },
 				description: "Updated project",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),

@@ -40,6 +40,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Marked all notifications as read",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),
@@ -54,6 +58,10 @@ app.openapi(
 			200: {
 				content: { "application/json": { schema: z.any() } },
 				description: "Marked a single notification as read",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),
@@ -83,6 +91,10 @@ app.openapi(
 			200: {
 				content: { "application/json": { schema: z.any() } },
 				description: "Updated notification channel preferences",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),

@@ -59,6 +59,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Recorded a new price for the property",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),

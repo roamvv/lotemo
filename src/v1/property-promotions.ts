@@ -33,6 +33,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Boosted a listing (started a paid promotion)",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),

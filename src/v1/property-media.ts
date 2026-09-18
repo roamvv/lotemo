@@ -43,6 +43,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Added a media item (photo/video) to a property",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),
@@ -60,6 +64,10 @@ app.openapi(
 			200: {
 				content: { "application/json": { schema: z.array(z.any()) } },
 				description: "Reordered a property's media (e.g. new cover photo)",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),

@@ -18,6 +18,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Created a buyer/renter inquiry on a property",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),

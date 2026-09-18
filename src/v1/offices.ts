@@ -41,6 +41,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Created office",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => c.json({ message: "Not implemented" }, 501),
@@ -58,6 +62,10 @@ app.openapi(
 			200: {
 				content: { "application/json": { schema: z.any() } },
 				description: "Updated office",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),
@@ -106,6 +114,12 @@ app.openapi(
 			200: {
 				content: { "application/json": { schema: z.any() } },
 				description: "Closest staffed office to a property, by gcsId distance",
+			},
+			404: {
+				content: {
+					"application/json": { schema: z.object({ message: z.string() }) },
+				},
+				description: "No staffed office found",
 			},
 		},
 	}),

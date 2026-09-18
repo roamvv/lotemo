@@ -31,6 +31,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Created a saved search",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),
@@ -71,6 +75,10 @@ app.openapi(
 			201: {
 				content: { "application/json": { schema: z.any() } },
 				description: "Saved a property",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),

@@ -48,6 +48,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Redeemed coupon, with discount applied",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),
@@ -80,6 +84,10 @@ app.openapi(
 			200: {
 				content: { "application/json": { schema: z.any() } },
 				description: "Subscribed to, or upgraded, a billing plan",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),
@@ -132,6 +140,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Created a one-off payment (e.g. for a promotion boost)",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),
@@ -170,6 +182,10 @@ app.openapi(
 			201: {
 				content: { "application/json": { schema: z.any() } },
 				description: "Requested a refund for a payment",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),

@@ -22,6 +22,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Reported a piece of content (listing, review, message…)",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),
@@ -85,6 +89,10 @@ app.openapi(
 			200: {
 				content: { "application/json": { schema: z.any() } },
 				description: "Took an action (dismiss, warn, remove, ban…) on a report",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),

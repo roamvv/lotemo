@@ -40,6 +40,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Created a collection",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),
@@ -57,6 +61,10 @@ app.openapi(
 			201: {
 				content: { "application/json": { schema: z.any() } },
 				description: "Added a property to the collection",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),

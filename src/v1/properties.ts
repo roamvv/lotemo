@@ -49,6 +49,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Created a property listing",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),
@@ -88,6 +92,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Updated property listing",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),
@@ -118,6 +126,10 @@ app.openapi(
 				content: { "application/json": { schema: z.any() } },
 				description: "Updated property status (e.g. AVAILABLE, RESERVED, SOLD)",
 			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
+			},
 		},
 	}),
 	(c) => notImplemented(c),
@@ -135,6 +147,10 @@ app.openapi(
 			200: {
 				content: { "application/json": { schema: z.any() } },
 				description: "Updated property verification state (admin/moderation)",
+			},
+			501: {
+				content: { "application/json": { schema: z.any() } },
+				description: "Not implemented",
 			},
 		},
 	}),
