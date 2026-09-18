@@ -1,11 +1,9 @@
-import { Entity, PrimaryGeneratedColumn } from 'typeorm';
-
-
+import { Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({
-  name: 'notifications',
+	name: "notifications",
 })
 export class Notification {
-  @PrimaryGeneratedColumn({ type: 'bigint', unsigned: true })
-  id: number
+	@PrimaryGeneratedColumn({ type: "bigint", unsigned: true })
+	id: number;
 }

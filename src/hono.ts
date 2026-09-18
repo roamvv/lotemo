@@ -1,7 +1,7 @@
-import { Hono } from 'hono'
+import { Hono } from "hono";
 
-import appv1 from './v1'
+import appv1 from "./v1";
 
-export const server = new Hono({ strict: true })
+export const server = new Hono({ strict: true });
 
-server.route('/', appv1)
+server.route("/", appv1);

@@ -1,10 +1,9 @@
-
-import { server } from '@/hono'
+import { server } from "@/hono";
 
 const createApp = () => {
-  const { fetch } = server
-  const port = process.env.PORT
-  return { port, fetch }
-}
+	const { fetch } = server;
+	const port = process.env.PORT;
+	return { port, fetch };
+};
 
-export default createApp()
+export default createApp();

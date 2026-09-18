@@ -1,11 +1,9 @@
-import { Entity, PrimaryGeneratedColumn } from 'typeorm';
-
+import { Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({
-  name: 'mod_reports',
+	name: "mod_reports",
 })
 export class ModerationReport {
-  @PrimaryGeneratedColumn({ type: 'bigint', unsigned: true })
-  id: number
+	@PrimaryGeneratedColumn({ type: "bigint", unsigned: true })
+	id: number;
 }
-

@@ -1,10 +1,8 @@
+import { auth } from "@/auth";
+import { Hono } from "hono";
 
-import { auth } from '@/auth'
-import { Hono } from 'hono'
+const app = new Hono({ strict: true });
 
-const app = new Hono({ strict: true })
+app.on(["POST", "GET"], "/auth/*", (c) => auth.handler(c.req.raw));
 
-app.on(['POST', 'GET'], '/auth/*', c => auth.handler(c.req.raw))
-
-
-export default app
+export default app;

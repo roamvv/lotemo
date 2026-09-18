@@ -1,0 +1,26 @@
+name: Deploy v1 to Render.com (staging only)
+on:
+  push:
+    branches: [staging/v1]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Typecheck
+        run: bunx tsc --noEmit
+      - name: Build
+        run: bun run build
+
+    deploy:
+      needs: checks
+      runs-on: ubuntu-latest
+      steps:
+        - name: Trigger v1 Render.com deploy
+          run: curl -fsSL -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"

@@ -14,25 +14,16 @@
 		"strictPropertyInitialization": false,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
-		"types": [
-			"@types/node"
-		],
+		"types": ["@types/node"],
 		"paths": {
 			".zod/*": ["./src/zod/*"],
 			".db/*": ["./db/*"],
-			".lib/*": ["./src/lib/*"],	
+			".lib/*": ["./src/lib/*"],
 			".service/*": ["./src/service/*"],
 			".context/*": ["./src/context/*"],
-			"@/*": ["./src/*"],
+			"@/*": ["./src/*"]
 		}
 	},
-	"exclude": [
-		"node_modules"
-	],
-	"include": [
-		"index.*.ts",
-		"env.d.ts",
-		"db",
-		"src"
-	]
+	"exclude": ["node_modules"],
+	"include": ["index.*.ts", "env.d.ts", "db", "src"]
 }
