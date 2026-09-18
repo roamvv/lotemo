@@ -9,5 +9,17 @@ declare namespace NodeJS {
     S3_ENDPOINT: string
     S3_ACCESS_KEY: string
     S3_SECRET_ACCESS_KEY: string
+    RESEND_API_KEY: string
   }
+}
+
+declare namespace TotemoV1 {
+
+  type HonoEnv = {
+    Variables: {
+      pgdb: typeof import('.db/pg').default
+      s3: typeof import('@/s3').default
+    }
+  }
+
 }

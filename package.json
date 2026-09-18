@@ -27,6 +27,7 @@
     "mysql2": "^3.23.3",
     "pg": "^8.23.0",
     "reflect-metadata": "^0.2.2",
+    "tiny-invariant": "^1.3.3",
     "tsx": "^4.23.12",
     "typeorm": "^1.1.0",
     "typeorm-extension": "^4.0.0",

@@ -1,0 +1,7 @@
+info:
+  name: Offices
+  type: folder
+  seq: 23
+
+request:
+  auth: inherit

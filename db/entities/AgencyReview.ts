@@ -3,12 +3,18 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateCol
 export const reviewClasses = [
   'AGENCY',
   'PROPERTY',
+  'AGENT',
 ] as const
 
 export const reviewStatuses = [
   'PUBLISH',
   'FLAG',
   'REMOVE',
+] as const
+
+export const reviewerTypes = [
+  'CLIENT',
+  'AGENT',
 ] as const
 
 @Entity({
@@ -21,10 +27,14 @@ export class AgencyReview {
   agencyId: number
   @Column({ type: 'bigint', unsigned: true, nullable: true })
   propertyId: number
+  @Column({ type: 'bigint', unsigned: true, nullable: true })
+  subjectMemberId: number | null
   @Column({ type: 'boolean' })
   isAnonymous: boolean
   @Column({ type: 'text', nullable: true })
   reviewerId: string | null
+  @Column({ type: 'enum', enum: reviewerTypes, nullable: true })
+  reviewerType: typeof reviewerTypes[number] | null
   @Column({ type: 'text' })
   fullName: string
   @Column({ type: 'int' })

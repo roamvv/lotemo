@@ -1,0 +1,24 @@
+info:
+  name: Update Office
+  type: http
+  seq: 3
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/agencies/7841002/offices/512"
+  body:
+    type: json
+    data: |-
+      {
+        "contacts": [
+          { "name": "Janice Cayanga", "phone": "09166250031" },
+          { "name": "Mark Reyes", "phone": "09171234567" }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

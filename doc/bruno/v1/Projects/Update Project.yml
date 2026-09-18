@@ -1,0 +1,22 @@
+info:
+  name: Update Project
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/projects/44210"
+  body:
+    type: json
+    data: |-
+      {
+        "description": "Mixed-use residential towers at Cebu Business Park with resort-style amenities.",
+        "totalUnitsCount": 160
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

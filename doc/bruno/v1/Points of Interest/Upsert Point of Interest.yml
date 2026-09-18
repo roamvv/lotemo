@@ -1,0 +1,27 @@
+info:
+  name: Upsert Point of Interest
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/points-of-interest"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Bato National High School",
+        "category": "SCHOOL",
+        "sourceProvider": "google_places",
+        "sourceId": "ChIJ_example"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Keyed by sourceProvider + sourceId; used by the ingestion job that refreshes the POI cache from Google Places/OSM.

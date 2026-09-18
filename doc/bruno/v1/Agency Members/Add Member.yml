@@ -13,7 +13,10 @@ http:
         "userId": "usr_2p8xk4mq0001",
         "fullName": "Grace Tan",
         "licenseId": "PRC-RESB-45213",
-        "role": "AGENT"
+        "role": "AGENT",
+        "avatarUrl": "https://cdn.lotemo.com/agents/grace-tan.jpg",
+        "bio": "Helps clients navigate the buying process end-to-end, from shortlist to turnover.",
+        "whatsappNumber": "+639171234567"
       }
   auth: inherit
 

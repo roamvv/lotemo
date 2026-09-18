@@ -12,9 +12,12 @@ http:
       {
         "agencyId": 7841002,
         "collectionId": 44012,
+        "projectId": null,
         "title": "2BR Condo Unit with Balcony, BGC",
         "description": "Bright corner unit on the 22nd floor with unobstructed skyline views, 1 parking slot, near High Street.",
         "propertyType": "CONDO",
+        "propertySubtype": "Condominium",
+        "furnishing": "SEMI_FURNISHED",
         "locationId": 154,
         "country": "Philippines",
         "state": "Metro Manila",

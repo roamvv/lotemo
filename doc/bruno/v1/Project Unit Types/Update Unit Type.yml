@@ -1,0 +1,21 @@
+info:
+  name: Update Unit Type
+  type: http
+  seq: 3
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/projects/44210/unit-types/910"
+  body:
+    type: json
+    data: |-
+      {
+        "maxFloorAreaSqm": 42
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

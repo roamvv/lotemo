@@ -1,0 +1,7 @@
+info:
+  name: Points of Interest
+  type: folder
+  seq: 24
+
+request:
+  auth: inherit

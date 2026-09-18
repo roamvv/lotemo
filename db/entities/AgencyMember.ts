@@ -32,6 +32,17 @@ export class AgencyMember {
   @Column({ type: 'enum', enum: agencyMemberRoles })
   role: typeof agencyMemberRoles[number]
 
+  @Column({ type: 'text', nullable: true })
+  avatarUrl: string | null
+  @Column({ type: 'text', nullable: true })
+  bio: string | null
+  @Column({ type: 'text', nullable: true })
+  whatsappNumber: string | null
+  @Column({ type: 'timestamptz', nullable: true })
+  lastActiveAt: Date | null
+  @Column({ type: 'int', default: 0 })
+  activeListingCount: number
+
   @CreateDateColumn({ type: 'timestamptz' })
   createdAt: Date
   @UpdateDateColumn({ type: 'timestamptz' })

@@ -4,6 +4,10 @@ import { DataSource, DataSourceOptions } from 'typeorm'
 import { SeederOptions } from 'typeorm-extension'
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies'
 
+import invariant from 'tiny-invariant'
+
+invariant(process.env.DATABASE_URL, 'DATABASE_URL is not defined')
+
 const opts: DataSourceOptions & SeederOptions = {
   type: 'postgres',
   url: process.env.DATABASE_URL ?? '',

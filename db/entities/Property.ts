@@ -21,6 +21,18 @@ export const propertyStatuses = [
   'RENTED',
 ] as const
 
+export const propertyFurnishings = [
+  'UNFURNISHED',
+  'SEMI_FURNISHED',
+  'FULLY_FURNISHED',
+] as const
+
+export const propertyVerificationStatuses = [
+  'UNVERIFIED',
+  'PARTIAL',
+  'FULLY_VERIFIED',
+] as const
+
 @Entity({
   name: 'ag_properties',
 })
@@ -31,6 +43,8 @@ export class Property {
   propId: string
   @Column({ type: 'bigint', unsigned: true })
   collectionId: number
+  @Column({ type: 'bigint', unsigned: true, nullable: true })
+  projectId: number | null
   @Column({ type: 'int' })
   sort: number
   @Column({ type: 'text', unique: true })
@@ -47,6 +61,12 @@ export class Property {
   propertyType: typeof propertyTypes[number]
   @Column({ type: 'enum', enum: propertyStatuses, default: 'AVAILABLE' })
   propertyStatus: typeof propertyStatuses[number]
+  @Column({ type: 'text', nullable: true })
+  propertySubtype: string | null
+  @Column({ type: 'enum', enum: propertyFurnishings, nullable: true })
+  furnishing: typeof propertyFurnishings[number] | null
+  @Column({ type: 'enum', enum: propertyVerificationStatuses, default: 'UNVERIFIED' })
+  verificationStatus: typeof propertyVerificationStatuses[number]
 
   @Column({ type: 'geometry', spatialFeatureType: 'Point', srid: 4326, nullable: true })
   gcsId: string | null

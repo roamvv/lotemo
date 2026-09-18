@@ -1,0 +1,24 @@
+info:
+  name: Update Property Verification
+  type: http
+  seq: 6
+
+http:
+  method: PATCH
+  url: "{{serverUrl}}/api/v1/properties/3391077/verification"
+  body:
+    type: json
+    data: |-
+      {
+        "verificationStatus": "FULLY_VERIFIED"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Distinct from Agency.verification: this badges the individual listing (shown on the card and detail page), separately from whether the posting agency itself is verified.

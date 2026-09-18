@@ -1,0 +1,30 @@
+info:
+  name: Create Agent Review
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{serverUrl}}/api/v1/agencies/7841002/reviews"
+  body:
+    type: json
+    data: |-
+      {
+        "isAnonymous": false,
+        "fullName": "Marco Villareal",
+        "rating": 5,
+        "comment": "Grace was responsive throughout and negotiated a fair price on our BGC unit.",
+        "class": "AGENT",
+        "subjectMemberId": 3310981,
+        "reviewerType": "CLIENT"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Same endpoint as Create Review; class: AGENT plus subjectMemberId rates the individual agent rather than the agency. reviewerType distinguishes client reviews from peer-agent reviews on the agent's profile.
