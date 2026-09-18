@@ -1,7 +1,6 @@
-name: Continuous integration on v1
 on:
   pull_request:
-    branches: [staging/v1, main/v1]
+    branches: [staging/v1, lotemo/v1]
 
 jobs:
   checks:
