@@ -1,0 +1,5 @@
+name: lotemov1-staging.onrender.com
+variables:
+  - name: serverUrl
+    value: https://lotemov1-staging.onrender.com
+    description: ""
