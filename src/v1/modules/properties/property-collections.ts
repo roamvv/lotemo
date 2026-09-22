@@ -1,5 +1,5 @@
-import { noContentStub, notImplemented } from "@/v1/lib/http";
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
+import { noContentStub, notImplemented } from "@/v1/lib/http";
 
 // TODO: wire handlers to db/entities/PropertyCollection.ts and PropertyCollectionItem.ts
 // via a repository layer. Collections are user-owned ("my collections") — mount

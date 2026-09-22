@@ -1,5 +1,5 @@
-import { noContentStub, notImplemented } from "@/v1/lib/http";
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
+import { noContentStub, notImplemented } from "@/v1/lib/http";
 
 // TODO: wire handlers to db/entities/PropertyMedia.ts via a repository layer.
 // Uploads should go through `c.var.s3` (see src/context/s3.ts / src/s3.ts).

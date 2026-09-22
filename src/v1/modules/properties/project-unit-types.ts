@@ -1,5 +1,5 @@
-import { noContentStub, notImplemented } from "@/v1/lib/http";
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
+import { noContentStub, notImplemented } from "@/v1/lib/http";
 
 // TODO: wire handlers to db/entities/ProjectUnitType.ts via a repository layer
 // NOTE: this mirrors the /projects/{projectId}/unit-types routes already stubbed

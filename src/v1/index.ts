@@ -1,5 +1,3 @@
-import { Hono } from "hono";
-
 import library from ".mod/account/library";
 import messages from ".mod/account/messages";
 import notifications from ".mod/account/notifications";
@@ -24,6 +22,7 @@ import propertyPrices from ".mod/properties/property-prices";
 import propertyPromotions from ".mod/properties/property-promotions";
 import locations from ".mod/search/locations";
 import pointsOfInterest from ".mod/search/points-of-interest";
+import { Hono } from "hono";
 
 export const v1 = new Hono({ strict: true }).basePath("/api/v1");
 

@@ -1,4 +1,3 @@
-
 import invariant from "tiny-invariant";
 import { DataSource, type DataSourceOptions } from "typeorm";
 import type { SeederOptions } from "typeorm-extension";

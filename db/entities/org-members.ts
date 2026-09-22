@@ -1,8 +1,10 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Column, Entity, Index, PrimaryColumn } from "typeorm";
 
 @Entity({
 	name: "iam_org_members",
 })
+// "Is this user in this org" membership check + org member lists.
+@Index(["organizationId", "userId"], { unique: true })
 export class OrganizationMember {
 	@PrimaryColumn({ type: "text" })
 	id: string;

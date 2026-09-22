@@ -1,6 +1,6 @@
+import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
 import { noContentStub, notFoundStub, notImplemented } from "@/v1/lib/http";
 import { paginatedResponseSchema, paginationQuery } from "@/v1/lib/pagination";
-import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
 
 // TODO: wire handlers to db/entities/Property.ts via a repository layer
 

@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Column, Entity, Index, PrimaryColumn } from "typeorm";
 
 @Entity({
 	name: "iam_org_invitations",
@@ -9,6 +9,7 @@ export class OrganizationInvitation {
 	@Column({ type: "text" })
 	email: string;
 	@Column({ type: "text" })
+	@Index()
 	organizationId: string;
 	@Column({ type: "text", nullable: true })
 	role: string | null;

@@ -2,6 +2,7 @@ import {
 	Column,
 	CreateDateColumn,
 	Entity,
+	Index,
 	PrimaryColumn,
 	UpdateDateColumn,
 } from "typeorm";
@@ -15,6 +16,7 @@ export class Session {
 	@Column({ type: "text", unique: true })
 	token: string;
 	@Column({ type: "text" })
+	@Index()
 	userId: string;
 	@Column({ type: "text", nullable: true })
 	activeOrganizationId: string | null;

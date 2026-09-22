@@ -1,5 +1,5 @@
-import { noContentStub, notImplemented } from "@/v1/lib/http";
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
+import { noContentStub, notImplemented } from "@/v1/lib/http";
 
 // TODO: wire handlers to db/entities/UserSavedSearch.ts and UserSavedProperty.ts via a repository layer
 // NOTE: all routes here are scoped to the authenticated user ("me") — mount `requireAuth`

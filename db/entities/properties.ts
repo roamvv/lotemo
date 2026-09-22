@@ -2,9 +2,23 @@ import {
 	Column,
 	CreateDateColumn,
 	Entity,
+	Index,
+	JoinColumn,
+	ManyToOne,
+	OneToMany,
 	PrimaryGeneratedColumn,
+	type Relation,
 	UpdateDateColumn,
 } from "typeorm";
+
+import { Agency } from "./agencies";
+import { Location } from "./locations";
+import { Project } from "./projects";
+import { PropertyCollection } from "./property-collections";
+import { PropertyFeatureList } from "./property-feature-lists";
+import { PropertyListingPromotion } from "./property-listing-promotions";
+import { PropertyMedia } from "./property-medias";
+import { PropertyPrice } from "./property-prices";
 
 export const propertyTypes = [
 	"FARM",
@@ -42,23 +56,44 @@ export const propertyVerificationStatuses = [
 @Entity({
 	name: "ag_properties",
 })
+// The core listing-search filter bar: status + type, scoped to a city,
+// newest first. Covers the "AVAILABLE houses in Legazpi" style query without
+// a sort/filesort step.
+@Index(["city", "propertyType", "propertyStatus", "createdAt"])
+// Bedroom/bathroom range filters, applied after the index above narrows the
+// row set.
+@Index(["propertyStatus", "bedroomCount", "bathroomCount"])
 export class Property {
 	@PrimaryGeneratedColumn({ type: "bigint", unsigned: true })
 	id: number;
 	@Column({ type: "text", unique: true })
 	propId: string;
 	@Column({ type: "bigint", unsigned: true })
+	@Index()
 	collectionId: number;
+	@ManyToOne(() => PropertyCollection, { onDelete: "RESTRICT" })
+	@JoinColumn({ name: "collectionId" })
+	collection: Relation<PropertyCollection>;
 	@Column({ type: "bigint", unsigned: true, nullable: true })
+	@Index()
 	projectId: number | null;
+	@ManyToOne(() => Project, { nullable: true, onDelete: "SET NULL" })
+	@JoinColumn({ name: "projectId" })
+	project: Relation<Project> | null;
 	@Column({ type: "int" })
 	sort: number;
 	@Column({ type: "text", unique: true })
 	slug: string;
+	// iam_users — indexed column, no relation (see agencies.ts note).
 	@Column({ type: "text" })
+	@Index()
 	postedById: string;
 	@Column({ type: "bigint", unsigned: true })
+	@Index()
 	agencyId: number;
+	@ManyToOne(() => Agency, { onDelete: "CASCADE" })
+	@JoinColumn({ name: "agencyId" })
+	agency: Relation<Agency>;
 	@Column({ type: "text" })
 	title: string;
 	@Column({ type: "text" })
@@ -78,6 +113,8 @@ export class Property {
 	})
 	verificationStatus: (typeof propertyVerificationStatuses)[number];
 
+	// Point geometry (lng/lat) for map bounds / "near me" search. GiST index
+	// added in the migration.
 	@Column({
 		type: "geometry",
 		spatialFeatureType: "Point",
@@ -86,7 +123,11 @@ export class Property {
 	})
 	gcsId: string | null;
 	@Column({ type: "bigint", unsigned: true })
+	@Index()
 	locationId: number;
+	@ManyToOne(() => Location, { onDelete: "RESTRICT" })
+	@JoinColumn({ name: "locationId" })
+	location: Relation<Location>;
 	@Column({ type: "text" })
 	country: string;
 	@Column({ type: "text", nullable: true })
@@ -106,8 +147,11 @@ export class Property {
 	bedroomCount: number | null;
 	@Column({ type: "int", nullable: true })
 	bathroomCount: number | null;
+	// FIXED: was declared nullable in the TS type but the column decorator
+	// was missing `nullable: true`, which would have made every insert
+	// without a value fail at the DB level.
 	@Column({ type: "int", nullable: true })
-	parkingSpacesCount: number;
+	parkingSpacesCount: number | null;
 
 	@Column({ type: "decimal", nullable: true })
 	floorAreaSqm: number | null;
@@ -121,4 +165,25 @@ export class Property {
 	createdAt: Date;
 	@UpdateDateColumn({ type: "timestamptz" })
 	updatedAt: Date;
+
+	@OneToMany(
+		() => PropertyPrice,
+		(price) => price.property,
+	)
+	prices: Relation<PropertyPrice>[];
+	@OneToMany(
+		() => PropertyMedia,
+		(media) => media.property,
+	)
+	media: Relation<PropertyMedia>[];
+	@OneToMany(
+		() => PropertyFeatureList,
+		(feature) => feature.property,
+	)
+	features: Relation<PropertyFeatureList>[];
+	@OneToMany(
+		() => PropertyListingPromotion,
+		(promo) => promo.property,
+	)
+	promotions: Relation<PropertyListingPromotion>[];
 }

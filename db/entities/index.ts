@@ -30,6 +30,7 @@ export { PointOfInterest } from "./pois";
 export { ProjectUnitType } from "./project-unit-types";
 export { Project } from "./projects";
 export { Property } from "./properties";
+export { PropertyCollectionItem } from "./property-collection-items";
 export { PropertyCollection } from "./property-collections";
 export { PropertyFeatureList } from "./property-feature-lists";
 export { PropertyListingPromotion } from "./property-listing-promotions";
@@ -40,4 +41,3 @@ export { UserSavedProperty } from "./user-saved-props";
 export { UserSavedSearch } from "./user-saved-searches";
 export { User } from "./users";
 export { Verification } from "./verifications";
-

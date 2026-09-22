@@ -1,9 +1,6 @@
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
 
-import {
-	dummyQuoteSchema,
-	getMessage,
-} from "./hellov1.service";
+import { dummyQuoteSchema, getMessage } from "./hellov1.service";
 
 const app = new OpenAPIHono();
 
@@ -27,8 +24,8 @@ app.openapi(
 		},
 	}),
 	async (c) => {
-		const res = await getMessage()
-		return c.json(res)
+		const res = await getMessage();
+		return c.json(res);
 	},
 );
 

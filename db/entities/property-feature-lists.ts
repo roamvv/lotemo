@@ -1,9 +1,15 @@
 import {
 	Column,
 	Entity,
+	Index,
+	JoinColumn,
+	ManyToOne,
 	PrimaryGeneratedColumn,
+	type Relation,
 	UpdateDateColumn,
 } from "typeorm";
+
+import { Property } from "./properties";
 
 export const propertyFeatureTypes = [
 	"BEDS_COUNT",
@@ -32,11 +38,23 @@ export const propertyFeatureTypes = [
 @Entity({
 	name: "ag_prop_feature_lists",
 })
+// Property detail page loads every feature row for a listing grouped by
+// section.
+@Index(["propertyId", "featureType"])
 export class PropertyFeatureList {
 	@PrimaryGeneratedColumn({ type: "bigint", unsigned: true })
 	id: number;
 	@Column({ type: "bigint", unsigned: true })
 	propertyId: number;
+	@ManyToOne(
+		() => Property,
+		(property) => property.features,
+		{
+			onDelete: "CASCADE",
+		},
+	)
+	@JoinColumn({ name: "propertyId" })
+	property: Relation<Property>;
 	@Column({
 		type: "enum",
 		enum: propertyFeatureTypes,

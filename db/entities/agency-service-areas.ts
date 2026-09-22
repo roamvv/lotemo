@@ -1,4 +1,15 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+	Column,
+	Entity,
+	Index,
+	JoinColumn,
+	ManyToOne,
+	PrimaryGeneratedColumn,
+	type Relation,
+} from "typeorm";
+
+import { Agency } from "./agencies";
+import { Location } from "./locations";
 
 @Entity({
 	name: "ag_service_areas",
@@ -7,11 +18,25 @@ export class AgencyServiceArea {
 	@PrimaryGeneratedColumn({ type: "bigint", unsigned: true })
 	id: number;
 	@Column({ type: "bigint", unsigned: true })
+	@Index()
 	agencyId: number;
+	@ManyToOne(
+		() => Agency,
+		(agency) => agency.serviceAreas,
+		{
+			onDelete: "CASCADE",
+		},
+	)
+	@JoinColumn({ name: "agencyId" })
+	agency: Relation<Agency>;
 	@Column({ type: "text" })
 	areaName: string;
 	@Column({ type: "bigint", unsigned: true })
+	@Index()
 	locationId: number;
+	@ManyToOne(() => Location, { onDelete: "RESTRICT" })
+	@JoinColumn({ name: "locationId" })
+	location: Relation<Location>;
 	@Column({
 		type: "geometry",
 		spatialFeatureType: "Point",

@@ -1,5 +1,5 @@
-import { auth } from "@/v1/app/auth";
 import { Hono } from "hono";
+import { auth } from "@/v1/app/auth";
 
 const app = new Hono({ strict: true });
 

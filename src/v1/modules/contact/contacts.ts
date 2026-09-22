@@ -1,5 +1,5 @@
-import { notImplemented } from "@/v1/lib/http";
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
+import { notImplemented } from "@/v1/lib/http";
 
 // TODO: wire handlers to db/entities/Contact.ts and ContactActivity.ts via a repository layer
 

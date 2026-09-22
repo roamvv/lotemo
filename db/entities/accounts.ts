@@ -2,6 +2,7 @@ import {
 	Column,
 	CreateDateColumn,
 	Entity,
+	Index,
 	PrimaryColumn,
 	UpdateDateColumn,
 } from "typeorm";
@@ -13,6 +14,7 @@ export class Account {
 	@PrimaryColumn({ type: "text" })
 	id: string;
 	@Column({ type: "text" })
+	@Index()
 	userId: string;
 	@Column({ type: "text" })
 	accountId: string;

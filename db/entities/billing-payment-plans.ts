@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, Index, PrimaryGeneratedColumn } from "typeorm";
 
 export const planClasses = ["FREE", "BASIC", "AGENT", "PRO"] as const;
 
@@ -27,8 +27,10 @@ export class PaymentPlan {
 	@Column({ type: "text", nullable: true })
 	description: string | null;
 	@Column({ type: "enum", enum: planClasses })
+	@Index()
 	class: (typeof planClasses)[number];
 	@Column({ type: "enum", enum: planTypes })
+	@Index()
 	type: (typeof planTypes)[number];
 	@Column({ type: "decimal", precision: 14, scale: 2 })
 	price: number;
@@ -49,5 +51,6 @@ export class PaymentPlan {
 	@Column({ type: "enum", enum: planBillingCycles })
 	billingCycle: (typeof planBillingCycles)[number];
 	@Column({ type: "boolean" })
+	@Index()
 	isActive: boolean;
 }
