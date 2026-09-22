@@ -7,10 +7,22 @@ run.dev:
 run.build:
 	@pnpm build
 
-.PHONY: pg.migrate
+.PHONY: pg.migrate pg.gen pg.create pg.run pg.revert
 pg.migrate:
+	$(MAKE) pg.gen
+	$(MAKE) pg.run
+
+pg.gen:
 	@bun ./node_modules/typeorm/cli.js migration:generate ./db/migrations/migrations -d ./db/pg.ts
+
+pg.create:
+	@bun ./node_modules/typeorm/cli.js migration:create ./db/migrations/migrations
+
+pg.run:
 	@bun ./node_modules/typeorm/cli.js migration:run -d ./db/pg.ts
+
+pg.revert:
+	@bun ./node_modules/typeorm/cli.js migration:revert -d ./db/pg.ts
 
 .PHONY: seed.create seed.run
 seed.create:

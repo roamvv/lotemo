@@ -1,4 +1,3 @@
-import "dotenv/config";
 
 import invariant from "tiny-invariant";
 import { DataSource, type DataSourceOptions } from "typeorm";
