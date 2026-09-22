@@ -4,8 +4,8 @@ import { auth } from "@/v1/app/auth";
 
 type Session = Awaited<ReturnType<typeof auth.api.getSession>>;
 
-type AuthEnv = TotemoV1.HonoEnv & {
-	Variables: TotemoV1.HonoEnv["Variables"] & {
+type AuthEnv = LotemoV1.HonoEnv & {
+	Variables: LotemoV1.HonoEnv["Variables"] & {
 		session: NonNullable<Session>["session"];
 		user: NonNullable<Session>["user"];
 	};

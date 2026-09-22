@@ -1,5 +1,4 @@
 [tools]
 node = "lts"
 bun = "latest"
-pnpm = "latest"
 actionlint = "latest"

@@ -3,9 +3,9 @@
 
 .PHONY: run.dev
 run.dev:
-	@pnpm dev
+	@bun run dev
 run.build:
-	@pnpm build
+	@bun run build
 
 .PHONY: pg.migrate pg.gen pg.create pg.run pg.revert
 pg.migrate:
@@ -32,4 +32,4 @@ seed.run:
 
 .PHONY: zip
 zip:
-	@git archive --format=zip --output=./$(shell git rev-parse --abbrev-ref HEAD).zip HEAD
+	@git archive --format=zip --output=./$(shell git rev-parse --abbrev-ref HEAD | sed 's/\//_/g').zip HEAD

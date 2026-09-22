@@ -12,7 +12,7 @@ declare namespace NodeJS {
 	}
 }
 
-declare namespace TotemoV1 {
+declare namespace LotemoV1 {
 	type HonoEnv = {
 		Variables: {
 			pgdb: typeof import(".db/pg").default;

@@ -6,7 +6,7 @@ import {
 	UpdateDateColumn,
 } from "typeorm";
 
-export const officeTypes = ["HEADQUARTERS", "BRANCH"] as const;
+export const officeTypes = ["HEAD", "BRANCH"] as const;
 
 export type OfficeContact = {
 	name: string;

@@ -14,7 +14,7 @@ const ensureInitialized = () => {
  * Attaches the shared TypeORM DataSource to `c.var.pgdb` for every request.
  * Mount once at the app root: `server.use('*', dbMiddleware)`.
  */
-export const dbMiddleware = createMiddleware<TotemoV1.HonoEnv>(
+export const dbMiddleware = createMiddleware<LotemoV1.HonoEnv>(
 	async (c, next) => {
 		await ensureInitialized();
 		c.set("pgdb", pgdb);

@@ -19,8 +19,8 @@
 			".zod/*": ["./src/zod/*"],
 			".db/*": ["./db/*"],
 			".lib/*": ["./src/v1/lib/*"],
-			".service/*": ["./src/v1/service/*"],
 			".context/*": ["./src/v1/context/*"],
+			".mod/*": ["./src/v1/modules/*"],
 			"@/*": ["./src/*"]
 		}
 	},
