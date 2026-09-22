@@ -19,8 +19,13 @@ export class OrganizationInvitation {
 		default: "pending",
 	})
 	status: "pending" | "accepted" | "rejected" | "cancelled";
-	@Column({ type: "text" })
+	@Column({ type: "text", nullable: true })
 	invitedBy: string;
 	@Column({ type: "timestamptz" })
 	createdAt: Date;
+	@Column({ type: "timestamptz" })
+	expiresAt: Date;
+	@Column({ type: "text" })
+	inviterId: string;
+
 }

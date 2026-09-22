@@ -28,4 +28,10 @@ export class Session {
 	createdAt: Date;
 	@UpdateDateColumn({ type: "timestamptz" })
 	updatedAt: Date;
+	@Column({ type: "timestamptz" })
+	expiresAt: Date;
+	@Column({ type: "varchar", length: 255 })
+	ipAddress: string;
+	@Column({ type: "text" })
+	userAgent: string;
 }
